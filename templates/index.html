@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#173b36">
+    <title>Customer Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Customer Care home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>COMMON<br><b>GROUND</b></span>
+      </a>
+      <div class="topbar-right">
+        <span class="service-indicator"><span></span> SUPPORT DESK</span>
+        <span class="topbar-rule" aria-hidden="true"></span>
+        <span class="provider-label" id="provider-label">Connecting</span>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="rail" aria-label="Conversation controls">
+        <div class="rail-section">
+          <p class="eyebrow">YOUR SPACE</p>
+          <button class="new-chat" id="new-chat" type="button">
+            <span aria-hidden="true">+</span> New conversation
+          </button>
+        </div>
+        <div class="rail-note">
+          <span class="note-icon" aria-hidden="true">i</span>
+          <div>
+            <p class="eyebrow">A QUICK NOTE</p>
+            <p>Order lookups and account changes need a support specialist.</p>
+          </div>
+        </div>
+        <div class="rail-footer">
+          <span class="online-dot" aria-hidden="true"></span>
+          <span>Here to help</span>
+        </div>
+      </aside>
+
+      <main class="chat-panel">
+        <div class="chat-heading">
+          <div>
+            <p class="eyebrow">CUSTOMER CARE</p>
+            <h1>Let’s get this sorted.</h1>
+          </div>
+          <span class="heading-stamp" aria-hidden="true">CG<br>01</span>
+        </div>
+
+        <section class="thread" id="thread" aria-label="Conversation" aria-live="polite">
+          <div class="welcome" id="welcome">
+            <div class="assistant-mark" aria-hidden="true">C</div>
+            <div class="welcome-copy">
+              <p class="message-author">CARE ASSISTANT <span>·</span> JUST NOW</p>
+              <p class="welcome-message">Hi there. What can I help you with today?</p>
+              <div class="suggestions" id="suggestions" aria-label="Suggested questions">
+                <button type="button" data-question="My order is delayed. What should I do?">My order is delayed</button>
+                <button type="button" data-question="My item arrived damaged. How can I get help?">An item arrived damaged</button>
+                <button type="button" data-question="I’d like to ask about a return or refund.">Returns &amp; refunds</button>
+              </div>
+            </div>
+          </div>
+          <div class="messages" id="messages"></div>
+        </section>
+
+        <form class="composer" id="composer">
+          <label class="sr-only" for="question">Your message</label>
+          <textarea id="question" name="question" rows="1" maxlength="4000" placeholder="Write your message…" required></textarea>
+          <button class="send-button" id="send-button" type="submit" aria-label="Send message" title="Send message">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M12.5 5.5 19 12l-6.5 6.5" /></svg>
+          </button>
+          <p class="composer-footnote">Please don’t share passwords or full card details.</p>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
